@@ -34,14 +34,21 @@
     function animateParticles() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); drawConnections(); requestAnimationFrame(animateParticles); }
     initParticles(); animateParticles();
 
-    // ==================== NAVBAR ====================
+       // ==================== NAVBAR ====================
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 80) { navbar.style.background = 'rgba(10, 10, 10, 0.85)'; navbar.style.backdropFilter = 'blur(16px)'; navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)'; }
-        else { navbar.style.background = 'transparent'; navbar.style.backdropFilter = 'none'; navbar.style.borderBottom = 'none'; }
+        if (window.pageYOffset > 80) { 
+            navbar.style.background = 'rgba(10, 10, 10, 0.85)'; 
+            navbar.style.backdropFilter = 'blur(16px)'; 
+            navbar.style.borderBottom = '1px solid rgba(16, 185, 129, 0.3)'; // Borde esmeralda claro al hacer scroll
+        } else { 
+            navbar.style.background = 'transparent'; 
+            navbar.style.backdropFilter = 'none'; 
+            navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)'; // Borde blanco muy sutil al inicio
+        }
     });
-
-    // ==================== MOBILE MENU ====================
+    
+      // ==================== MOBILE MENU ====================
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburger = document.getElementById('hamburger');
